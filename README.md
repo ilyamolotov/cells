@@ -1,2 +1,2 @@
-# 3.-cells
+# cells
 property of cells
