@@ -1,15 +1,13 @@
 #file_io.py
-# обработка файлов
-from config import *
+'''
+1. открытие файла в директории 
+2. обработка в массив (далее)
+'''
+from lib import *
 
-
-
-# получить путь изображения по номеру
-def get_image_path_by_number(image_number):
-    image_name = f"img ({image_number}).{IMAGE_EXTENSION}"
-    image_path = os.path.join(IMAGE_FOLDER_PATH, image_name)
-    return image_path
-
-# загрузить изображение
-def load_image(image_path):
-    return Image.open(image_path)
+def load_and_convert_to_gray(image_number):
+    current_directory = os.getcwd()
+    image_folder = os.path.join(current_directory, "img")
+    filename = f"img ({image_number}).jpg"
+    image_path = os.path.join(image_folder, filename)
+    original_image = cv2.imread(image_path)
